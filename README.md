@@ -1,12 +1,12 @@
-CoderRestaurant Website
+# CoderRestaurant Website
 
 **Coder Restaurant** is a Ruby on Rails restaurant website let users order foods.
 
 Submitted by: **Minh Dinh**
 
-Time spent: **XX** hours spent in total
+Time spent: **17** hours spent in total
 
-URL: **heroku-app-url**
+URL: https://warm-oasis-55822.herokuapp.com
 
 ## User Stories
 
@@ -20,7 +20,7 @@ URL: **heroku-app-url**
   * [x] Lunch
   * [x] Dinner
   * [x] Drinks
-* [ ] User should see at least 5 food items in each section.
+* [x] User should see at least 5 food items in each section.
 * [x] Each food item should have the following fields:
   * Name (Canh Chua)
   * Description (Delicious fish soup)
@@ -47,4 +47,37 @@ URL: **heroku-app-url**
 * [ ] The Restaurant (you) receives an email or SMS when a User places an order. Try Twilio if you’d like a SMS API. Use Promo Code CodeSchool15 for $30 free credit.
 
 The following **additional** features are implemented:
+* [ ] Something nice you added.
+
+The following **known issues**:
+
+* List bugs or things that don't work yet: The "sort by" function works well in the UI, but if someone manually changes its parameter in the url, it may throw an error.
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+![Video Walkthrough](CoderRestaurant.gif)
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+## Notes
+
+Describe any challenges encountered while building the app.
+I have not enough time to finish all of the optional part of the Assignment and there are many new things to learn.
+## License
+
+    Copyright [2016] [Minh Dinh]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
 
