@@ -32,6 +32,26 @@
             <div class="card-block">
               <%= item.description %>
             </div>
+            <div class="card">
+              <div class="card-block">
+                <h3>New review</h3>
+                <%= form_for Review.new(food_item: item) do |f| %>
+                  Rating: <%= f.select :rating, options_for_select((1..5).to_a) %>
+                  Content: <%= f.text_area :content %>
+                  <%= f.hidden_field :food_item_id %>
+                  <%= f.submit %>
+                <% end %>
+              </div>
+            </div>
+            <h3>Reviews</h3>
+            <ul>
+              <% item.reviews.each do |review| %>
+                <li>
+                  <strong>Rating:</strong> <%= pluralize review.rating, 'star' %><br/>
+                  <strong>Content:</strong> <%= review.content %>
+                </li>
+              <% end %>
+            </ul>
           </div>
           <%= link_to "Create Order", new_order_path(food_item_id: item.id), class: 'btn btn-danger' %>
         </div>
