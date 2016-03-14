@@ -34,6 +34,7 @@
                 <%= item.description %>
               </div>
             </div>
+            <%= link_to "Create Order", new_order_path(food_item_id: item.id), class: 'btn btn-danger' %>
           </div>
         </li>
       <% end %>

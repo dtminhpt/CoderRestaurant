@@ -1,4 +1,6 @@
 class FoodItem < ActiveRecord::Base
+  has_many :orders
+
 	def image_url_or_auto
 		if image_url.present?
 			image_url
