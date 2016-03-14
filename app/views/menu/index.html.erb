@@ -18,16 +18,35 @@
   </p>
 <% end %>
 
-<% @food_items.each do |item| %>
-  <div class="card">
-    <div class="card-block">
-      <%= item.name %>
-    </div>
-    <div class="card-block">
-      <%= image_tag item.image_url_or_auto %>
-    </div>
-    <div class="card-block">
-      <%= item.description %> - <%= number_to_currency item.price, unit: 'VND ', precision: 0 %>
-    </div>
+<div class="row">
+  <div id="menu-item-listing" class="col-sm-6">
+    <ul>
+      <% @food_items.each do |item| %>
+        <li id="item-<%= item.id %>" class="menu-item">
+          <%= item.name %> - <%= number_to_currency item.price, unit: 'VND ', precision: 0 %>
+
+          <div class="hidden">
+            <div class="card">
+              <div class="card-block">
+                <%= image_tag item.image_url_or_auto %>
+              </div>
+              <div class="card-block">
+                <%= item.description %>
+              </div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    </ul>
   </div>
-<% end %>
+  <div id="menu-item-content" class="col-sm-6">
+    item content
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(".menu-item").click(function() {
+    var html = $(this).find('.hidden').html();
+    $('#menu-item-content').html(html);
+  });
+</script>
