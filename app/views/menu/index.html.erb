@@ -20,25 +20,23 @@
 
 <div class="row">
   <div id="menu-item-listing" class="col-sm-6">
-    <ul>
-      <% @food_items.each do |item| %>
-        <li id="item-<%= item.id %>" class="menu-item">
-          <%= item.name %> - <%= number_to_currency item.price, unit: 'VND ', precision: 0 %>
+    <% @food_items.each do |item| %>
+      <div id="item-<%= item.id %>" class="menu-item card">
+        <%= item.name %> - <%= number_to_currency item.price, unit: 'VND ', precision: 0 %>
 
-          <div class="hidden">
-            <div class="card">
-              <div class="card-block">
-                <%= image_tag item.image_url_or_auto %>
-              </div>
-              <div class="card-block">
-                <%= item.description %>
-              </div>
+        <div class="hidden">
+          <div class="card">
+            <div class="card-block">
+              <%= image_tag item.image_url_or_auto %>
             </div>
-            <%= link_to "Create Order", new_order_path(food_item_id: item.id), class: 'btn btn-danger' %>
+            <div class="card-block">
+              <%= item.description %>
+            </div>
           </div>
-        </li>
-      <% end %>
-    </ul>
+          <%= link_to "Create Order", new_order_path(food_item_id: item.id), class: 'btn btn-danger' %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <div id="menu-item-content" class="col-sm-6">
     item content
@@ -49,5 +47,12 @@
   $(".menu-item").click(function() {
     var html = $(this).find('.hidden').html();
     $('#menu-item-content').html(html);
+    $(".menu-item").removeClass('active');
+    $(this).addClass('active');
+    return false;
+  });
+
+  $(document).ready(function() {
+    $(".menu-item")[0].click();
   });
 </script>

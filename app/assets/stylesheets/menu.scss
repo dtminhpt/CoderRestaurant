@@ -5,3 +5,17 @@
 .hidden {
   display: none;
 }
+
+.menu-item {
+  padding: 5px 10px;
+  margin-bottom: 2px;
+}
+
+.menu-item.active {
+  background-color: #0275d8;
+  color: white;
+}
+
+.menu-item:hover {
+  background-color: #AAA;
+}
