@@ -12,7 +12,7 @@
 <%= form_tag menu_path, method: :get do %>
   <p>
     Sort by:
-    <%= select_tag "sort", options_for_select([['Name', 'name asc'], ['Highest price first', 'price desc'], ['Lowest price first', 'price asc']], params[:sort]) %>
+    <%= select_tag "sort", options_for_select([['Name', 'name asc'], ['Highest price first', 'price desc'], ['Lowest price first', 'price asc'], ['Most viewed', 'view_count desc']], params[:sort]) %>
     <%= hidden_field_tag :section, params[:section] %>
     <%= submit_tag 'Submit', class: 'button' %>
   </p>
@@ -22,7 +22,7 @@
   <div id="menu-item-listing" class="col-sm-6">
     <% @food_items.each do |item| %>
       <div id="item-<%= item.id %>" class="menu-item card">
-        <%= item.name %> - <%= number_to_currency item.price, unit: 'VND ', precision: 0 %>
+        <%= item.name %> - <%= number_to_currency item.price, unit: 'VND ', precision: 0 %> (<%= pluralize item.view_count, 'view' %>)
 
         <div class="hidden">
           <div class="card">

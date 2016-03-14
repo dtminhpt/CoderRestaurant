@@ -15,6 +15,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
     @item = FoodItem.find(params[:food_item_id])
+    @item.increment!(:view_count)
     @order = @item.orders.new
   end
 
