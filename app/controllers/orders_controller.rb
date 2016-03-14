@@ -27,6 +27,12 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+    if params[:coupon] == 'CODERSCHOOL'
+      @order.price = @order.food_item.price / 2
+    else
+      @order.price = @order.food_item.price
+    end
+    @order.price += 20000  # Add delivery cost
 
     respond_to do |format|
       if @order.save

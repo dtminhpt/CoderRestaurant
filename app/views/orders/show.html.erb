@@ -12,9 +12,6 @@
     <div class="card-block">
       <%= item.description %>
     </div>
-    <div class="card-block">
-      TOTAL COST: <%= number_to_currency item.price + 20000, unit: 'VND ', precision: 0 %>
-    </div>
   </div>
 </p>
 
@@ -31,6 +28,11 @@
 <p>
   <strong>Address:</strong>
   <%= @order.address %>
+</p>
+
+<p>
+  <strong>Total cost:</strong>
+  <%= number_to_currency @order.price, unit: 'VND ', precision: 0 %> (+20k VND for delivery)
 </p>
 
 <p>
