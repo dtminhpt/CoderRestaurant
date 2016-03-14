@@ -19,13 +19,14 @@
         <a class="nav-link" href="<%= contact_us_path%>">Contact Us</a>
       </li>
     </ul>
-    <form class="form-inline pull-xs-right">
-      <input class="form-control" type="text" placeholder="Search">
-      <button class="btn btn-success-outline" type="submit">Search</button>
-    </form>
+    <%= form_tag menu_path, method: :get, class: "form-inline pull-xs-right" do %>
+      <%= text_field_tag :keyword, params[:keyword], class: "form-control", placeholder: "Keyword to search" %>
+      <%= hidden_field_tag :section, params[:section] %>
+      <%= submit_tag 'Search', class: 'btn btn-success-outline' %>
+      </p>
+    <% end %>
   </nav>
   </div>
-
 </body>
 
 

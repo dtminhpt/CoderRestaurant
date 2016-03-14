@@ -14,4 +14,8 @@ class FoodItem < ActiveRecord::Base
   def self.filter_by_section(section)
     where("section ILIKE ?", "%#{section}%")
   end
+
+  def self.search(keyword)
+    where("name LIKE ? OR description LIKE ?", "%#{keyword}%", "%#{keyword}%")
+  end
 end

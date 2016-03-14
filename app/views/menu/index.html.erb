@@ -14,6 +14,7 @@
     Sort by:
     <%= select_tag "sort", options_for_select([['Name', 'name asc'], ['Highest price first', 'price desc'], ['Lowest price first', 'price asc'], ['Most viewed', 'view_count desc']], params[:sort]) %>
     <%= hidden_field_tag :section, params[:section] %>
+    <%= hidden_field_tag :keyword, params[:keyword] %>
     <%= submit_tag 'Submit', class: 'button' %>
   </p>
 <% end %>
@@ -60,7 +61,6 @@
     <% end %>
   </div>
   <div id="menu-item-content" class="col-sm-6">
-    item content
   </div>
 </div>
 

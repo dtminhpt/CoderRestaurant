@@ -5,5 +5,8 @@ class MenuController < ApplicationController
     if params[:sort].present?
       @food_items = @food_items.order(params[:sort])
     end
+    if params[:keyword].present?
+      @food_items = @food_items.search(params[:keyword])
+    end
   end
 end
