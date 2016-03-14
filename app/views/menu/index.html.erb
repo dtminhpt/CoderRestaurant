@@ -44,6 +44,7 @@
               </div>
             </div>
             <h3>Reviews</h3>
+            <h5>Average rating: <%= pluralize item.reviews.average(:rating), 'star' %></h5>
             <ul>
               <% item.reviews.each do |review| %>
                 <li>
