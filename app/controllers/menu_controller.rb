@@ -1,6 +1,6 @@
 class MenuController < ApplicationController
   def index
   		@sections = %w(Breakfast Lunch Dinner Supper)
-  		@food_items = FoodItem.where(section: params[:section])
+  		@food_items = FoodItem.filter_by_section(params[:section])
   end
 end
